@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Lista de Materiales</title>
+<div th:replace="Footer.html"></div>
+
+<div class="container">
+	<h1>Lista de Materiales</h1>
+	<table class="table table-striped">
+		<br>
+		<br>
+		<thead>
+			<tr>
+				<th>Nombre</th>
+				<th>Unidad Metrica</th>
+				<th>Obersvació</th>
+				<th>Acción</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="material : ${materiales}">
+
+				<td th:text="${material.nombre}">Nombre</td>
+				<td th:text="${material.unidadMetrica}">Unidad Metrica</td>
+				<td th:text="${material.observacion}">Observacion</td>
+
+				<td><a th:href="@{'/Materiales/' + ${material.id} + '/Editar'}" class="btn btn-info">Editar</a>
+					<a th:href="@{'/Materiales/' + ${material.id} + '/Ocultar'}" class="btn btn-danger">Eliminar</a>
+					
+
+			</tr>
+		</tbody>
+	</table>
+</div>
+</body>
+</html>

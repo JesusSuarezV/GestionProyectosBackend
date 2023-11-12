@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Lista de Proyectos</title>
+<div th:replace="Footer.html"></div>
+
+<div class="container">
+	<h1>Lista de Proyectos</h1>
+	<table class="table table-striped">
+		<br>
+		<br>
+		<thead>
+			<tr>
+				<th>Nombre</th>
+				<th>Acción</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="proyecto : ${proyectos}">
+
+				<td th:text="${proyecto.nombre}">Nombre</td>
+
+				<td><a th:href="@{'/Proyectos/' + ${proyecto.id} + '/Editar'}" class="btn btn-info">Editar</a>
+					<a th:href="@{'/Proyectos/' + ${proyecto.id} + '/Ocultar'}" class="btn btn-danger">Eliminar</a>
+					
+
+			</tr>
+		</tbody>
+	</table>
+</div>
+</body>
+</html>

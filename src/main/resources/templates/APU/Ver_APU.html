@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Lista de APU</title>
+<div th:replace="Footer.html"></div>
+
+<div class="container">
+	<h1>Lista de APU</h1>
+	<table class="table table-striped">
+		<br>
+		<br>
+		<thead>
+			<tr>
+				<th>Nombre</th>
+				<th>Unidad</th>
+				<th>Acción</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="apu : ${apu}">
+
+				<td th:text="${apu.nombre}">Nombre</td>
+				<td th:text="${apu.unidad}">Unidad</td>
+
+				<td><a th:href="@{'/APU/' + ${apu.id} + '/Editar'}" class="btn btn-info">Editar</a>
+					<a th:href="@{'/APU/' + ${apu.id} + '/Ocultar'}" class="btn btn-danger">Eliminar</a>
+					
+
+			</tr>
+		</tbody>
+	</table>
+</div>
+</body>
+</html>

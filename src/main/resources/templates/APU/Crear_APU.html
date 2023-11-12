@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Registro de APU</title>
+<div th:replace="Footer.html"></div>
+<div class="container">
+	<h1>Registro de APU</h1>
+	<br> <br>
+	<form th:action="@{/APU/Guardar}" th:object="${apu}" method="POST"
+		enctype="multipart/form-data">
+
+		<div class="form-group">
+			<label for="nombre">Nombre:</label> <input type="text"
+				class="form-control" id="nombre" name="nombre" required>
+		</div>
+		
+		<div class="form-group">
+			<label for="nombre">Unidad:</label> <input type="text"
+				class="form-control" id="unidad" name="unidad" required>
+		</div>
+		<button type="submit" class="btn btn-primary">Guardar</button>
+	</form>
+</div>
+</body>
+</html>
+

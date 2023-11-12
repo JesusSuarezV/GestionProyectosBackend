@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Edición de Proyecto</title>
+<div th:replace="Footer.html"></div>
+<div class="container">
+	<br> <br>
+	<div class="row">
+		<div
+			class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+			<h1 class="text-center">Edición de Proyecto</h1>
+			<div class="card-body">
+				<form th:action="@{'/Proyectos/' + ${proyecto.id} + '/Actualizar'}"
+					th:object="${proyecto}" method="POST"
+					enctype="multipart/form-data">
+
+					<div class="form-group">
+						<label>Nombre : </label> <input type="text" name="nombre"
+							th:field="*{nombre}" class="form-control"
+							placeholder="Digite el nuevo nombre del proyecto : " required>
+					</div>
+					<div class="box-footer">
+						<button class="btn btn-success">Actualizar</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+
+</html>

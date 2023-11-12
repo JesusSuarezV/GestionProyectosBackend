@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Lista de Maquinarias</title>
+<div th:replace="Footer.html"></div>
+
+<div class="container">
+	<h1>Lista de Maquinarias</h1>
+	<table class="table table-striped">
+		<br>
+		<br>
+		<thead>
+			<tr>
+				<th>Nombre</th>
+				<th>Unidad</th>
+				<th>Acción</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="maquinaria : ${maquinarias}">
+
+				<td th:text="${maquinaria.nombre}">Nombre</td>
+				<td th:text="${maquinaria.unidad}">Unidad</td>
+
+				<td><a th:href="@{'/Maquinarias/' + ${maquinaria.id} + '/Editar'}" class="btn btn-info">Editar</a>
+					<a th:href="@{'/Maquinarias/' + ${maquinaria.id} + '/Ocultar'}" class="btn btn-danger">Eliminar</a>
+					
+
+			</tr>
+		</tbody>
+	</table>
+</div>
+</body>
+</html>
